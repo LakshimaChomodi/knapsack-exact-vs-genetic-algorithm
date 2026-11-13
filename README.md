@@ -10,16 +10,23 @@ This study compares an exact optimization approach with a Genetic Algorithm (GA)
 
 ## Problem formulation
 
-Given a set of items, each with a value (profit) and weight, choose items to maximize total value without exceeding the knapsack capacity. Each item is either selected or not selected:
+Given a set of items, each with a profit and a weight, the objective is to select a subset that maximizes total profit without exceeding the knapsack capacity. Each item can be selected at most once.
 
-\[
-\max \sum_{i=1}^{n} p_i x_i
-\quad\text{subject to}\quad
-\sum_{i=1}^{n} w_i x_i \leq W,
-\qquad x_i \in \{0,1\}.
-\]
+$$
+\begin{aligned}
+\max \quad & \sum_{i=1}^{n} p_i x_i \\
+\text{subject to} \quad & \sum_{i=1}^{n} w_i x_i \leq W, \\
+& x_i \in \{0,1\}, \qquad i=1,2,\ldots,n.
+\end{aligned}
+$$
 
-Here, \(p_i\) and \(w_i\) are the profit and weight of item \(i\), and \(W\) is the capacity.
+Here:
+
+- $n$ is the number of available items.
+- $p_i$ is the profit of item $i$.
+- $w_i$ is the weight of item $i$.
+- $W$ is the knapsack capacity.
+- $x_i = 1$ if item $i$ is selected, and $x_i = 0$ otherwise.
 
 ## Methods
 
